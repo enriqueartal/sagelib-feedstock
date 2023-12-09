@@ -37,7 +37,6 @@ set -x
 mkdir -p "$SAGE_SPKG_INST"
 mkdir -p "$SAGE_DOC"
 
-
 cd $SRC_DIR/build/pkgs/sage_setup/src
 python setup.py install --single-version-externally-managed --record record.txt
 
@@ -68,3 +67,5 @@ mkdir -p "$PREFIX/var/lib/sage/installed"
 touch "$PREFIX/var/lib/sage/installed/.conda"
 
 rm $PREFIX/bin/$HOST-pkg-config
+mkdir -p $SRC_DIR/to-copy
+mv $SP_DIR/sage/libs/sirocco* $SRC_DIR/to-copy/
